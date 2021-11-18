@@ -9,7 +9,7 @@ BLUE='\033[1;34m'
 CYAN='\033[1;36m'
 NC='\033[0m'
 declare -A colors=( [0]=$GREEN [1]=$RED [2]=$BLUE [3]=$CYAN [4]=$NC )
-#colors[0]=$GREEN
+dt="          $(date +"%D %T")"
 welcome="          Welcome $USER"
 len=$(echo $welcome | wc -c)
 col=$(( $RANDOM % 5))
@@ -35,6 +35,9 @@ for (( g=0; g < gens; g++ )); do
 			if [ $i -lt $((11+$len)) ] && [ $g -eq 4 ];
 			then
 				printf "${NC}${welcome:$((i-2)):1}"
+			elif [ $i -lt $((11+$len)) ] && [ $g -eq 5 ];  
+			then
+				printf "${NC}${dt:$((i-2)):1}"	
 			else	
 				printf " "
 			fi
