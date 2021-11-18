@@ -10,7 +10,7 @@ CYAN='\033[1;36m'
 NC='\033[0m'
 declare -A colors=( [0]=$GREEN [1]=$RED [2]=$BLUE [3]=$CYAN [4]=$NC )
 #colors[0]=$GREEN
-welcome="          Welcome $1"
+welcome="          Welcome $USER"
 len=$(echo $welcome | wc -c)
 col=$(( $RANDOM % 5))
 for ((i=0;i<gens;i++)) do
